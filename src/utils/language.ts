@@ -6,6 +6,7 @@ import { systemLanguageRef } from './refs';
 
 // Language: Language Code in books/translations
 export const languageCodeMap: Record<string, string> = {
+  Persian:'fa',
   English: 'en',
   French: 'fr',
   German: 'de',
