@@ -9,6 +9,7 @@ import {
   DEFAULT_DATE_FORMAT,
   DEFAULT_DISPLAY_PRECISION,
   DEFAULT_LOCALE,
+  DEFAULT_OUTPUT_CALENDER,
 } from './consts';
 
 export function format(
@@ -73,15 +74,32 @@ function formatDatetime(value: unknown, fyo: Fyo): string {
 
   const dateFormat =
     (fyo.singles.SystemSettings?.dateFormat as string) ?? DEFAULT_DATE_FORMAT;
+
+  const outputCalendar =
+    (fyo.singles.SystemSettings?.outputCalendar as string) ?? DEFAULT_OUTPUT_CALENDER;
+
+  const locale = (fyo.config.get('language') as string) === 'Persian' ? 'fa' : outputCalendar === 'persian' ? 'fa' : 'en-US'
+
   const dateTime = toDatetime(value);
   if (!dateTime) {
     return '';
   }
 
-  const formattedDatetime = dateTime.toFormat(`${dateFormat} HH:mm:ss`);
+  let formattedDatetime = dateTime.toFormat(`${dateFormat} HH:mm:ss`, { outputCalendar: outputCalendar, locale: locale, numberingSystem: 'latn' });
 
   if (value === 'Invalid DateTime') {
     return '';
+  }
+
+  const persianMonth = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+  const dariMonth = ['حمل', 'ثور', 'جوزا', 'سرطان', 'اسد', 'سنبله', 'میزان', 'عقرب', 'قوس', 'جدی', 'دلو', 'حوت'];
+
+  const persianGregoryMonth = ['ژانویه', 'فوریه', 'مارس', 'آوریل', 'مه', 'ژوئن', 'ژوئیه', 'اوت', 'سپتامبر', 'اکتبر', 'نوامبر', 'دسامبر']
+  const dariGregoryMonth = ['جنوری', 'فبروری', 'مارچ', 'اپریل', 'می', 'جون', 'جولای', 'آگست', 'سپتمبر', 'اکتبر', 'نومبر', 'دیسمبر']
+  if (outputCalendar === 'persian') {
+    persianMonth.map((v, i) => { formattedDatetime = formattedDatetime.replaceAll(persianMonth[i], dariMonth[i]) })
+  } else if (locale === 'fa' && outputCalendar === 'gregory') {
+    persianGregoryMonth.map((v, i) => { formattedDatetime = formattedDatetime.replaceAll(persianGregoryMonth[i], dariGregoryMonth[i]) })
   }
 
   return formattedDatetime;
@@ -95,14 +113,31 @@ function formatDate(value: unknown, fyo: Fyo): string {
   const dateFormat =
     (fyo.singles.SystemSettings?.dateFormat as string) ?? DEFAULT_DATE_FORMAT;
 
+  const outputCalendar =
+    (fyo.singles.SystemSettings?.outputCalendar as string) ?? DEFAULT_OUTPUT_CALENDER;
+
+  const locale = (fyo.config.get('language') as string) === 'Persian' ? 'fa' : outputCalendar === 'persian' ? 'fa' : 'en-US'
+
   const dateTime = toDatetime(value);
   if (!dateTime) {
     return '';
   }
 
-  const formattedDate = dateTime.toFormat(dateFormat);
+  let formattedDate = dateTime.toFormat(dateFormat, { outputCalendar: outputCalendar, locale: locale, numberingSystem: 'latn' });
   if (value === 'Invalid DateTime') {
     return '';
+  }
+
+  const persianMonth = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+  const dariMonth = ['حمل', 'ثور', 'جوزا', 'سرطان', 'اسد', 'سنبله', 'میزان', 'عقرب', 'قوس', 'جدی', 'دلو', 'حوت'];
+
+  const persianGregoryMonth = ['ژانویه', 'فوریه', 'مارس', 'آوریل', 'مه', 'ژوئن', 'ژوئیه', 'اوت', 'سپتامبر', 'اکتبر', 'نوامبر', 'دسامبر']
+  const dariGregoryMonth = ['جنوری', 'فبروری', 'مارچ', 'اپریل', 'می', 'جون', 'جولای', 'آگست', 'سپتمبر', 'اکتبر', 'نومبر', 'دیسمبر']
+
+  if (outputCalendar === 'persian') {
+    persianMonth.map((v, i) => { formattedDate = formattedDate.replaceAll(persianMonth[i], dariMonth[i]) })
+  } else if (locale === 'fa' && outputCalendar === 'gregory') {
+    persianGregoryMonth.map((v, i) => { formattedDate = formattedDate.replaceAll(persianGregoryMonth[i], dariGregoryMonth[i]) })
   }
 
   return formattedDate;

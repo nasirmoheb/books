@@ -21,7 +21,7 @@
     </PageHeader>
 
     <div
-      class="no-scrollbar overflow-auto"
+      class="overflow-auto custom-scroll"
       style="height: calc(100vh - var(--h-row-largest) - 1px)"
     >
       <div style="min-width: var(--w-desk-fixed)" class="overflow-auto">
@@ -45,7 +45,7 @@
           />
         </div>
         <hr />
-        <div class="flex">
+        <div class="flex mb-18">
           <ProfitAndLoss
             class="w-full p-4 border-e"
             :common-period="period"

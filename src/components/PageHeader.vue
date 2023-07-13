@@ -1,5 +1,6 @@
 <template>
   <div
+  dir="ltr"
     class="px-4 flex justify-between items-center h-row-largest flex-shrink-0"
     :class="[
       border ? 'border-b' : '',
@@ -20,12 +21,7 @@
     >
       <!-- Nav Group -->
       <PageHeaderNavGroup />
-      <h1
-        v-if="title"
-        class="text-xl font-semibold select-none whitespace-nowrap"
-      >
-        {{ title }}
-      </h1>
+    
 
       <!-- Left Slot -->
       <div class="flex items-stretch window-no-drag gap-4">
@@ -38,6 +34,13 @@
       class="flex items-stretch window-no-drag gap-2 ms-auto"
       :class="platform === 'Mac' && languageDirection === 'rtl' ? 'me-18' : ''"
     >
+      <h1
+        v-if="title"
+        class="text-xl font-semibold select-none whitespace-nowrap"
+        :class="languageDirection === 'rtl' ? 'me-18' : 'mr-18'"
+      >
+        {{ title }}
+      </h1>
       <slot />
     </div>
   </div>

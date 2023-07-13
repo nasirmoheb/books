@@ -6,6 +6,15 @@
   src: url('../assets/fonts/Inter.var.woff2') format('woff2');
 }
 
+
+@font-face {
+  font-family: 'BYekan';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url('../assets/fonts/BYekan+.ttf') format('truetype');
+}
+
 * {
   outline-color: theme('colors.pink.400');
   font-variation-settings: 'slnt' 0deg;

@@ -8,6 +8,7 @@ import {
   getRandomString,
   getValueMapFromList,
 } from 'utils/index';
+import { setLanguageMap } from './language';
 
 export async function initializeInstance(
   dbPath: string,
@@ -33,6 +34,7 @@ export async function initializeInstance(
   await setInstanceId(fyo);
   await setOpenCount(fyo);
   await setCurrencySymbols(fyo);
+  const language = (fyo.config.get('language') as string) || fyo.store.language || 'English'
 }
 
 async function closeDbIfConnected(fyo: Fyo) {
