@@ -49,6 +49,30 @@
       "section": "Default"
     },
     {
+      "fieldname": "outputCalendar",
+      "label": "Date Type",
+      "fieldtype": "AutoComplete",
+      "options": [
+        {
+          "label": "Solar Hijri",
+          "value": "persian"
+        },
+        {
+          "label": "Gregory",
+          "value": "gregory"
+        },
+        {
+          "label": "Moon Hijri",
+          "value": "islamic"
+        }
+      ],
+      "default": "persian",
+      "required": true,
+      "allowCustom": true,
+      "description": "Set the Calender Type",
+      "section": "Default"
+    },
+    {
       "fieldname": "hideGetStarted",
       "label": "Hide Get Started",
       "fieldtype": "Check",
