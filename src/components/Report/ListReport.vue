@@ -150,13 +150,16 @@ export default defineComponent({
       const width = cell.width ?? 1;
 
       let align = cell.align ?? 'left';
+      let direction = this.languageDirection;
       if (this.languageDirection === 'rtl') {
         align = this.languageDirection === 'rtl' ? 'right' : 'left';
+        direction ='ltr';
       }
 
       styles['width'] = `${width * this.wconst}rem`;
       styles['text-align'] = align;
-
+      styles['direction'] = direction;
+      
       if (cell.bold) {
         styles['font-weight'] = 'bold';
       }
