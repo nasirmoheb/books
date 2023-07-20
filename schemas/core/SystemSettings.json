@@ -60,10 +60,6 @@
         {
           "label": "Gregory",
           "value": "gregory"
-        },
-        {
-          "label": "Moon Hijri",
-          "value": "islamic"
         }
       ],
       "default": "persian",

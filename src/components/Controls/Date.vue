@@ -7,8 +7,8 @@
     <input v-show="showInput" ref="input" :class="[inputClasses, containerClasses, 'custom-input']" :type="date"
       :placeholder="inputPlaceholder" :readonly="isReadOnly" :tabindex="isReadOnly ? '-1' : '0'" />
 
-    <date-picker locale="fa,en" :show="showInput" v-model="date" :editable="true" :display-format="displayFormat"
-      format="YYYY/MM/DD" @close="onClose" custom-input=".custom-input" :type="inputType">
+    <date-picker :locale="localeValue" :show="showInput" v-model="date" color="#2196f3" :editable="true"
+      :display-format="displayFormat" format="YYYY/MM/DD" @close="onClose" custom-input=".custom-input" :type="inputType">
     </date-picker>
 
     <div v-show="!showInput" class="flex" :class="[containerClasses, sizeClasses]" tabindex="0" @click="activateInput">
@@ -60,6 +60,9 @@ export default defineComponent({
     },
     displayFormat() {
       return 'jYYYY/jMM/jDD'
+    },
+    localeValue() {
+      return (fyo.singles.SystemSettings?.outputCalendar as string) === 'gregory' ? 'en,fa' : 'fa,en';
     },
     formattedValue() {
       const value = this.parse(this.value);
