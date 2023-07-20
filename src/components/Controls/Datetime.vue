@@ -7,7 +7,10 @@ export default defineComponent({
   extends: DateVue,
   computed: {
     inputType() {
-      return 'datetime-local';
+      return 'datetime';
+    },
+    displayFormat() {
+      return 'jYYYY/jMM/jDD hh:mm:ss'
     },
     inputValue(): string {
       let value = this.value;

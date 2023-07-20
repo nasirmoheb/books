@@ -3,32 +3,16 @@
     <div v-if="showLabel" :class="labelClasses">
       {{ df.label }}
     </div>
-    <input
-      v-show="showInput"
-      ref="input"
-      :class="[inputClasses, containerClasses]"
-      :type="inputType"
-      :value="inputValue"
-      :placeholder="inputPlaceholder"
-      :readonly="isReadOnly"
-      :tabindex="isReadOnly ? '-1' : '0'"
-      @blur="onBlur"
-      @focus="onFocus"
-      @input="(e) => $emit('input', e)"
-    />
-    <div
-      v-show="!showInput"
-      class="flex"
-      :class="[containerClasses, sizeClasses]"
-      tabindex="0"
-      @click="activateInput"
-      @focus="activateInput"
-    >
-      <p
-        v-if="!isEmpty"
-        :class="[baseInputClasses]"
-        class="overflow-auto no-scrollbar whitespace-nowrap"
-      >
+
+    <input v-show="showInput" ref="input" :class="[inputClasses, containerClasses, 'custom-input']" :type="date"
+      :placeholder="inputPlaceholder" :readonly="isReadOnly" :tabindex="isReadOnly ? '-1' : '0'" />
+
+    <date-picker locale="fa,en" :show="showInput" v-model="date" :editable="true" :display-format="displayFormat"
+      format="YYYY/MM/DD" @close="onClose" custom-input=".custom-input" :type="inputType">
+    </date-picker>
+
+    <div v-show="!showInput" class="flex" :class="[containerClasses, sizeClasses]" tabindex="0" @click="activateInput">
+      <p v-if="!isEmpty" :class="[baseInputClasses]" class="overflow-auto no-scrollbar whitespace-nowrap">
         {{ formattedValue }}
       </p>
       <p v-else-if="inputPlaceholder" class="text-base text-gray-500 w-full">
@@ -36,26 +20,26 @@
       </p>
 
       <button v-if="!isReadOnly" class="-me-0.5 ms-1">
-        <FeatherIcon
-          name="calendar"
-          class="w-4 h-4"
-          :class="showMandatory ? 'text-red-600' : 'text-gray-600'"
-        />
+        <FeatherIcon name="calendar" class="w-4 h-4" :class="showMandatory ? 'text-red-600' : 'text-gray-600'" />
       </button>
     </div>
+
   </div>
 </template>
 <script lang="ts">
 import { fyo } from 'src/initFyo';
 import { defineComponent, nextTick } from 'vue';
 import Base from './Base.vue';
-
+import datePicker from 'vue3-persian-datetime-picker'
+import { toRefs } from 'vue';
 export default defineComponent({
   extends: Base,
   emits: ['input', 'focus'],
+  components: { datePicker },
   data() {
     return {
       showInput: false,
+      date: ''
     };
   },
   computed: {
@@ -73,6 +57,9 @@ export default defineComponent({
     },
     inputType() {
       return 'date';
+    },
+    displayFormat() {
+      return 'jYYYY/jMM/jDD'
     },
     formattedValue() {
       const value = this.parse(this.value);
@@ -97,42 +84,24 @@ export default defineComponent({
     },
   },
   methods: {
-    onFocus(e: FocusEvent) {
-      const target = e.target;
-      if (!(target instanceof HTMLInputElement)) {
-        return;
-      }
-
-      target.select();
-      this.showInput = true;
-      this.$emit('focus', e);
-    },
-    onBlur(e: FocusEvent) {
-      const target = e.target;
-      if (!(target instanceof HTMLInputElement)) {
-        return;
-      }
+    onClose(e) {
+      const event = toRefs(e)
+      console.log(event.altFormatted.value);
 
       this.showInput = false;
-      let value: Date | null = new Date(target.value);
+      let value: Date | null = new Date(event.altFormatted.value);
       if (Number.isNaN(value.valueOf())) {
         value = null;
       }
-
       this.triggerChange(value);
-    },
+    }
+    ,
     activateInput() {
       if (this.isReadOnly) {
         return;
       }
 
       this.showInput = true;
-      nextTick(() => {
-        this.focus();
-
-        // @ts-ignore
-        this.$refs.input.showPicker();
-      });
     },
   },
 });
