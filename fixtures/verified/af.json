@@ -1,0 +1,174 @@
+{
+  "countryCode": "af",
+  "name": "Afghanistan - Chart of Accounts",
+  "tree": {
+    "دارایی ها": {
+      "دارایی های جاری": {
+        "حساب های دریافتنی": {
+          "قرض دار ها": {
+            "accountType": "Receivable"
+          }
+        },
+        "حساب های بانکی": {
+          "accountType": "Bank",
+          "isGroup": true
+        },
+        "موجودی نقدی": {
+          "پول نقد": {
+            "accountType": "Cash"
+          },
+          "accountType": "Cash"
+        },
+        "تسهیلات و قرض های اعطا شده (دارایی)": {
+          "isGroup": true
+        },
+        "اوراق بهادار و سپرده ها": {
+          "بيعانه (پیش پرداخت)": {}
+        },
+        "موجودی مواد و کالا": {
+          "اجناس در دست": {
+            "accountType": "Stock"
+          },
+          "accountType": "Stock"
+        },
+        "دارایی‌های مالیاتی": {
+          "isGroup": true
+        }
+      },
+      "دارایی های ثابت": {
+        "ماشین‌آلات و تجهیزات": {
+          "accountType": "Fixed Asset"
+        },
+        "تجهیزات الکترونیکی": {
+          "accountType": "Fixed Asset"
+        },
+        "فرنیچر و وسایل تزئینی": {
+          "accountType": "Fixed Asset"
+        },
+        "تجهیزات دفتر": {
+          "accountType": "Fixed Asset"
+        },
+        "تاسیسات و ابزار آلات": {
+          "accountType": "Fixed Asset"
+        },
+        "ساختمان ها": {
+          "accountType": "Fixed Asset"
+        },
+        "نرم‌افزارها": {
+          "accountType": "Fixed Asset"
+        },
+        "استهلاک اضافه شده": {
+          "accountType": "Accumulated Depreciation"
+        }
+      },
+      "سرمایه‌گذاری‌ها": {
+        "isGroup": true
+      },
+      "حساب‌های موقت": {
+        "افتتاحیه موقت": {
+          "accountType": "Temporary"
+        }
+      },
+      "rootType": "Asset"
+    },
+    "مصارف": {
+      "مصارف مستقیم": {
+        "مصارف اجناس": {
+          "قیمت تمام شد اجناس": {
+            "accountType": "Cost of Goods Sold"
+          },
+          "مصارف لحاظ شده در قیمت گذاری": {
+            "accountType": "Expenses Included In Valuation"
+          },
+          "تعدیل و اصلاح موجودی": {
+            "accountType": "Stock Adjustment"
+          }
+        }
+      },
+      "مصارف غیرمستقیم": {
+        "مصارف اداری": {},
+        "کمیشن فروش": {},
+        "استهلاک": {
+          "accountType": "Depreciation"
+        },
+        "مصارف سرگرمی (خوشگزرانی)": {},
+        "مصارف حمل و نقل": {
+          "accountType": "Chargeable"
+        },
+        "مصارف حقوقی": {},
+        "مصارف بازاریابی": {
+          "accountType": "Chargeable"
+        },
+        "مصارف متفرقه": {
+          "accountType": "Chargeable"
+        },
+        "مصارف تعمیر و نگه‌داری دفتر": {},
+        "کرایه دفتر": {},
+        "مصارف پستی": {},
+        "چاپ و لوازم التحریر": {},
+        "روند آف": {
+          "accountType": "Round Off"
+        },
+        "معاش و دستمزد": {},
+        "مصارف فروش": {},
+        "مصارف تلفن": {},
+        "مصارف سفر": {},
+        "هزينه هاي خدماتي": {},
+        "کسر (مبلغ غیر قابل دریافت)": {},
+        "مفاد/ضرر تبادلات (ارزی)": {},
+        "سود/زیان در فروش دارایی": {}
+      },
+      "rootType": "Expense"
+    },
+    "درآمد": {
+      "درآمد مستقیم": {
+        "فروش": {},
+        "خدمات": {}
+      },
+      "درآمد غیرمستقیم": {
+        "isGroup": true
+      },
+      "rootType": "Income"
+    },
+    "بدهی ها": {
+      "بدهی های جاری": {
+        "حساب های پرداختنی": {
+          "طلبکار ها": {
+            "accountType": "Payable"
+          },
+          "معاش های پرداختنی": {}
+        },
+        "بدهی های اجناس": {
+          "اجناس دریافت شده اما فاكتور نشده": {
+            "accountType": "Stock Received But Not Billed"
+          }
+        },
+        "مالیات و عوارض": {
+          "accountType": "Tax",
+          "isGroup": true
+        },
+        "قرضه ها (بدهی ها)": {
+          "قرض های تضمین شده": {},
+          "قرض های تضمین نشده": {},
+          "حساب اضافه پرداخت بانکی": {}
+        }
+      },
+      "rootType": "Liability"
+    },
+    "حقوق صاحبان سهام": {
+      "مجموع سهام صادر شده": {
+        "accountType": "Equity"
+      },
+      "سود سهام پرداخت شده": {
+        "accountType": "Equity"
+      },
+      "سرمایه اولیه صاحبان سهام": {
+        "accountType": "Equity"
+      },
+      "مفاد انباشته": {
+        "accountType": "Equity"
+      },
+      "rootType": "Equity"
+    }
+  }
+}
