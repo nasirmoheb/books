@@ -17,29 +17,14 @@
       </div>
       <div v-else class="w-16 h-5 bg-gray-200 rounded" />
 
-      <PeriodSelector
-        v-if="hasData"
-        :value="period"
-        :options="periodOptions"
-        @change="(value) => (period = value)"
-      />
+      <PeriodSelector v-if="hasData" :value="period" :options="periodOptions" @change="(value) => (period = value)" />
       <div v-else class="w-20 h-5 bg-gray-200 rounded" />
     </div>
 
     <!-- Line Chart -->
-    <LineChart
-      v-if="chartData.points.length"
-      class="mt-4"
-      :aspect-ratio="4.15"
-      :colors="chartData.colors"
-      :points="chartData.points"
-      :x-labels="chartData.xLabels"
-      :format="chartData.format"
-      :format-x="chartData.formatX"
-      :y-max="chartData.yMax"
-      :draw-labels="hasData"
-      :show-tooltip="hasData"
-    />
+    <LineChart v-if="chartData.points.length" class="mt-4" :aspect-ratio="4.15" :colors="chartData.colors"
+      :points="chartData.points" :x-labels="chartData.xLabels" :format="chartData.format" :format-x="chartData.formatX"
+      :y-max="chartData.yMax" :draw-labels="hasData" :show-tooltip="hasData" />
   </div>
 </template>
 <script lang="ts">
@@ -84,7 +69,7 @@ export default defineComponent({
         colors = [uicolors.gray['200'], uicolors.gray['100']];
       }
 
-      const xLabels = data.map((cf) => cf.yearmonth);
+      const xLabels = data.map((cf) => this.fyo.format(cf.yearmonth, 'Date'));
       const points = (['inflow', 'outflow'] as const).map((k) =>
         data.map((d) => d[k])
       );

@@ -3,25 +3,12 @@
     <SectionHeader>
       <template #title>{{ t`Profit and Loss` }}</template>
       <template #action>
-        <PeriodSelector
-          :value="period"
-          :options="periodOptions"
-          @change="(value) => (period = value)"
-        />
+        <PeriodSelector :value="period" :options="periodOptions" @change="(value) => (period = value)" />
       </template>
     </SectionHeader>
-    <BarChart
-      v-if="hasData"
-      class="mt-4"
-      :aspect-ratio="2.05"
-      :colors="chartData.colors"
-      :points="chartData.points"
-      :x-labels="chartData.xLabels"
-      :format="chartData.format"
-      :format-x="chartData.formatX"
-      :y-max="chartData.yMax"
-      :y-min="chartData.yMin"
-    />
+    <BarChart v-if="hasData" class="mt-4" :aspect-ratio="2.05" :colors="chartData.colors" :points="chartData.points"
+      :x-labels="chartData.xLabels" :format="chartData.format" :format-x="chartData.formatX" :y-max="chartData.yMax"
+      :y-min="chartData.yMin" />
     <div v-else class="flex-1 w-full h-full flex-center my-20">
       <span class="text-base text-gray-600">
         {{ t`No transactions yet` }}
@@ -69,7 +56,7 @@ export default defineComponent({
       const yMax = getYMax(points);
       const yMin = getYMin(points);
       return {
-        xLabels: this.data.map((d) => d.yearmonth),
+        xLabels: this.data.map((d) => this.fyo.format(d.yearmonth, 'Date')),
         points,
         format,
         colors,
