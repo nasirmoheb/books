@@ -96,62 +96,62 @@ export class StockBalance extends StockLedger {
       },
       {
         fieldname: 'item',
-        label: 'Item',
+        label: t`Item`,
         fieldtype: 'Link',
       },
       {
         fieldname: 'location',
-        label: 'Location',
+        label: t`Location`,
         fieldtype: 'Link',
       },
       ...(this.hasBatches
         ? ([
-            { fieldname: 'batch', label: 'Batch', fieldtype: 'Link' },
+            { fieldname: 'batch', label: t`Batch`, fieldtype: 'Link' },
           ] as ColumnField[])
         : []),
       {
         fieldname: 'balanceQuantity',
-        label: 'Balance Qty.',
+        label: t`Balance Qty.`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'balanceValue',
-        label: 'Balance Value',
+        label: t`Balance Value`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'openingQuantity',
-        label: 'Opening Qty.',
+        label: t`Opening Qty.`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'openingValue',
-        label: 'Opening Value',
+        label: t`Opening Value`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'incomingQuantity',
-        label: 'In Qty.',
+        label: t`In Qty.`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'incomingValue',
-        label: 'In Value',
+        label: t`In Value`,
         fieldtype: 'Currency',
       },
       {
         fieldname: 'outgoingQuantity',
-        label: 'Out Qty.',
+        label: t`Out Qty.`,
         fieldtype: 'Float',
       },
       {
         fieldname: 'outgoingValue',
-        label: 'Out Value',
+        label: t`Out Value`,
         fieldtype: 'Currency',
       },
       {
         fieldname: 'valuationRate',
-        label: 'Valuation rate',
+        label: t`Valuation Rate`,
         fieldtype: 'Currency',
       },
     ];

@@ -110,6 +110,8 @@ function formatDate(value: unknown, fyo: Fyo): string {
     return '';
   }
 
+  // console.log(value);
+
   const dateFormat =
     (fyo.singles.SystemSettings?.dateFormat as string) ?? DEFAULT_DATE_FORMAT;
 

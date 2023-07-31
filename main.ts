@@ -24,7 +24,7 @@ import registerProcessListeners from './main/registerProcessListeners';
 import { emitMainProcessError } from 'backend/helpers';
 
 export class Main {
-  title = 'Frappe Books';
+  title = 'Zarin Accounting App';
   icon: string;
 
   winURL = '';
