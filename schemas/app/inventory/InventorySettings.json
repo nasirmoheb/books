@@ -58,12 +58,6 @@
       "section": "Features"
     },
     {
-      "fieldname": "enableBatches",
-      "label": "Enable Batches",
-      "fieldtype": "Check",
-      "section": "Features"
-    },
-    {
       "fieldname": "enableSerialNumber",
       "label": "Enable Serial Number",
       "fieldtype": "Check",

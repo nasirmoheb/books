@@ -74,7 +74,8 @@
         }
       ],
       "required": true,
-      "section": "Default"
+      "section": "Default",
+      "default": "Journal Entry"
     },
     {
       "fieldname": "date",

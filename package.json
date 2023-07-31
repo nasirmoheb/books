@@ -20,6 +20,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@alireza-ab/vue3-persian-datepicker": "^1.0.2",
     "@codemirror/autocomplete": "^6.4.2",
     "@codemirror/lang-vue": "^0.1.1",
     "@popperjs/core": "^2.10.2",
@@ -35,8 +36,8 @@
     "pesa": "^1.1.12",
     "source-map-support": "^0.5.21",
     "vue": "^3.2.40",
-    "vue-persian-datetime-picker": "^2.10.4",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vue3-persian-datetime-picker": "^1.2.2"
   },
   "devDependencies": {
     "@codemirror/language": "^6.0.0",

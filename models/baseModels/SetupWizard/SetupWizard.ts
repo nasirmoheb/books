@@ -21,6 +21,7 @@ function getCurrencyList(): { countryCode: string; name: string }[] {
 
 export function getCOAList() {
   return [
+    { name: t`Afghanistan - Chart of Accounts`, countryCode: 'af' },
     { name: t`Standard Chart of Accounts`, countryCode: '' },
 
     { countryCode: 'ae', name: 'U.A.E - Chart of Accounts' },

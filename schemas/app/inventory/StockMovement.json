@@ -40,10 +40,6 @@
         {
           "value": "MaterialTransfer",
           "label": "Material Transfer"
-        },
-        {
-          "value": "Manufacture",
-          "label": "Manufacture"
         }
       ],
       "required": true,
@@ -80,5 +76,8 @@
     "amount",
     "items"
   ],
-  "keywordFields": ["name", "movementType"]
+  "keywordFields": [
+    "name",
+    "movementType"
+  ]
 }

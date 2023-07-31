@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+import { fyo } from 'src/initFyo';
 
 export function prefixFormat(value: number): string {
   /*
@@ -17,7 +18,11 @@ export function prefixFormat(value: number): string {
   const ten = Math.floor(Math.log10(Math.abs(value)));
   const three = Math.floor(ten / 3);
   const num = Math.round(value / Math.pow(10, three * 3));
-  const suffix = ['', 'K', 'M', 'B', 'T', 'Q', 'P'][three];
+  let suffix = ['', 'K', 'M', 'B', 'T', 'Q', 'P'][three];
+  if ((fyo.config.get('language') as string) === 'Persian') {
+    suffix = ['', 'هزار', 'میلیون', 'میلیارد', 'تریلیون', 'Q', 'P'][three];
+  }
+
   return `${num} ${suffix}`;
 }
 
@@ -64,5 +69,7 @@ export function getYMin(points: number[][]): number {
 }
 
 export function formatXLabels(label: string) {
-  return DateTime.fromISO(label).toFormat('MMM yy');
+  return label;
+
+  // return DateTime.fromISO(label).toFormat('MMMM yyyy');
 }
