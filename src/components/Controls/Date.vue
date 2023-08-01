@@ -27,6 +27,7 @@
   </div>
 </template>
 <script lang="ts">
+import { DateTime } from 'luxon';
 import { fyo } from 'src/initFyo';
 import { defineComponent, nextTick } from 'vue';
 import Base from './Base.vue';
@@ -50,7 +51,7 @@ export default defineComponent({
       }
 
       if (value instanceof Date && !Number.isNaN(value.valueOf())) {
-        return value.toISOString().split('T')[0];
+        return DateTime.fromJSDate(value).toISODate();
       }
 
       return '';
@@ -92,7 +93,7 @@ export default defineComponent({
       console.log(event.altFormatted.value);
 
       this.showInput = false;
-      let value: Date | null = new Date(event.altFormatted.value);
+      let value: Date | null = DateTime.fromISO(event.altFormatted.value).toJSDate();
       if (Number.isNaN(value.valueOf())) {
         value = null;
       }

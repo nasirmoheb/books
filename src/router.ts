@@ -127,6 +127,10 @@ router.afterEach(({ fullPath }) => {
   historyState.forward = !!state.forward;
   historyState.back = !!state.back;
 
+  if (fullPath.includes('index.html')) {
+    return;
+  }
+
   localStorage.setItem('lastRoute', fullPath);
 });
 

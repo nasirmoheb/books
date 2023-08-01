@@ -141,10 +141,10 @@ import { searcherKey, shortcutsKey, languageDirectionKey } from 'src/utils/injec
 import { openLink } from 'src/utils/ipcCalls';
 import { docsPathMap } from 'src/utils/misc';
 import {
-  getGroupLabelMap,
   SearchGroup,
-  searchGroups,
   SearchItems,
+  getGroupLabelMap,
+  searchGroups,
 } from 'src/utils/search';
 import { defineComponent, inject, nextTick } from 'vue';
 import Button from './Button.vue';
@@ -247,7 +247,7 @@ export default defineComponent({
   },
   methods: {
     openDocs() {
-      openLink('https://docs.frappebooks.com/' + docsPathMap.Search);
+      ipc.openLink('https://docs.frappebooks.com/' + docsPathMap.Search);
     },
     getShortcuts() {
       const ifOpen = (cb: Function) => () => this.openModal && cb();
