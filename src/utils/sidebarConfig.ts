@@ -269,7 +269,7 @@ function getCompleteSidebar(): SidebarConfig {
           route: '/chart-of-accounts',
         },
         {
-          label: t`Taxes`,
+          label: t`Tax Templates`,
           name: 'taxes',
           route: '/list/Tax',
           schemaName: 'Tax',
@@ -283,6 +283,14 @@ function getCompleteSidebar(): SidebarConfig {
           label: t`Print Templates`,
           name: 'print-template',
           route: `/list/PrintTemplate/${t`Print Templates`}`,
+        },
+        {
+          label: t`Customize Form`,
+          name: 'customize-form',
+          // route: `/customize-form`,
+          route: `/list/CustomForm/${t`Customize Form`}`,
+          hidden: () =>
+            !fyo.singles.AccountingSettings?.enableFormCustomization,
         },
         {
           label: t`Settings`,
