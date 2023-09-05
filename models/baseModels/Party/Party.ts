@@ -78,9 +78,9 @@ export class Party extends Doc {
           return '';
         }
 
-        let accountName = 'Debtors';
+        let accountName = 'قرض دار ها';
         if (role === 'Supplier') {
-          accountName = 'Creditors';
+          accountName = 'طلبکار ها';
         }
 
         const accountExists = await this.fyo.db.exists('Account', accountName);

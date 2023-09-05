@@ -17,7 +17,7 @@
     },
     {
       "fieldname": "backReference",
-      "label": "Back Reference",
+      "label": "Purchase Reference",
       "fieldtype": "Link",
       "target": "PurchaseInvoice",
       "section": "References"

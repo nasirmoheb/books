@@ -34,7 +34,8 @@
       "fieldtype": "Link",
       "target": "Account",
       "create": true,
-      "required": true
+      "required": true,
+      "section": "Default"
     },
     {
       "fieldname": "date",

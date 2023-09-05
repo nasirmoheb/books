@@ -1,39 +1,16 @@
 <template>
-  <div
-    id="app"
-    class="h-screen flex flex-col font-sans overflow-hidden antialiased"
-    :dir="languageDirection"
-    :language="language"
-  >
-    <WindowsTitleBar
-      v-if="platform === 'Windows'"
-      :db-path="dbPath"
-      :company-name="companyName"
-    />
+  <div id="app" class="h-screen flex flex-col font-sans overflow-hidden antialiased" :dir="languageDirection"
+    :language="language">
+    <WindowsTitleBar v-if="platform === 'Windows'" :db-path="dbPath" :company-name="companyName" />
     <!-- Main Contents -->
-    <Desk
-      v-if="activeScreen === 'Desk'"
-      class="flex-1"
-      @change-db-file="showDbSelector"
-    />
-    <DatabaseSelector
-      v-if="activeScreen === 'DatabaseSelector'"
-      ref="databaseSelector"
-      @new-database="newDatabase"
-      @file-selected="fileSelected"
-    />
-    <SetupWizard
-      v-if="activeScreen === 'SetupWizard'"
-      @setup-complete="setupComplete"
-      @setup-canceled="showDbSelector"
-    />
+    <Desk v-if="activeScreen === 'Desk'" class="flex-1" @change-db-file="showDbSelector" />
+    <DatabaseSelector v-if="activeScreen === 'DatabaseSelector'" ref="databaseSelector" @new-database="newDatabase"
+      @file-selected="fileSelected" />
+    <SetupWizard v-if="activeScreen === 'SetupWizard'" @setup-complete="setupComplete" @setup-canceled="showDbSelector" />
 
     <!-- Render target for toasts -->
-    <div
-      id="toast-container"
-      class="absolute bottom-0 flex flex-col items-end mb-3 pe-6"
-      style="width: 100%; pointer-events: none"
-    ></div>
+    <div id="toast-container" class="absolute bottom-0 flex flex-col items-end mb-3 pe-6"
+      style="width: 100%; pointer-events: none"></div>
   </div>
 </template>
 <script lang="ts">
@@ -167,7 +144,7 @@ export default defineComponent({
           title: this.t`Cannot open file`,
           type: 'error',
           detail: this
-            .t`Frappe Books does not have access to the selected file: ${filePath}`,
+            .t`Zarin does not have access to the selected file: ${filePath}`,
         });
 
         fyo.config.set('lastSelectedFilePath', null);

@@ -232,7 +232,7 @@ function getCompleteSidebar(): SidebarConfig {
           schemaName: 'JournalEntry',
         },
         {
-          label: t`Party`,
+          label: t`Parties`,
           name: 'party',
           route: '/list/Party',
           schemaName: 'Party',

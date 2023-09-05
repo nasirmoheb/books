@@ -4,8 +4,7 @@
       <!-- Backdrop -->
       <div v-if="open" class="backdrop z-20 flex justify-center items-center">
         <!-- Dialog -->
-        <div
-          class="
+        <div class="
             bg-white
             border
             rounded-lg
@@ -16,15 +15,10 @@
             flex flex-col
             gap-4
             inner
-          "
-        >
+          " :dir="languageDirection">
           <div class="flex justify-between items-center">
             <h1 class="font-semibold">{{ title }}</h1>
-            <FeatherIcon
-              :name="config.iconName"
-              class="w-6 h-6"
-              :class="config.iconColor"
-            />
+            <FeatherIcon :name="config.iconName" class="w-6 h-6" :class="config.iconColor" />
           </div>
 
           <template v-if="detail">
@@ -37,14 +31,8 @@
             </div>
           </template>
           <div class="flex justify-end gap-4 mt-4">
-            <Button
-              v-for="(b, index) of buttons"
-              :ref="b.isPrimary ? 'primary' : 'secondary'"
-              :key="b.label"
-              style="min-width: 5rem"
-              :type="b.isPrimary ? 'primary' : 'secondary'"
-              @click="() => handleClick(index)"
-            >
+            <Button v-for="(b, index) of buttons" :ref="b.isPrimary ? 'primary' : 'secondary'" :key="b.label"
+              style="min-width: 5rem" :type="b.isPrimary ? 'primary' : 'secondary'" @click="() => handleClick(index)">
               {{ b.label }}
             </Button>
           </div>
@@ -57,6 +45,8 @@
 import { getIconConfig } from 'src/utils/interactive';
 import { DialogButton, ToastType } from 'src/utils/types';
 import { defineComponent, nextTick, PropType, ref } from 'vue';
+import { RTL_LANGUAGES } from 'fyo/utils/consts';
+import { systemLanguageRef } from 'src/utils/refs';
 import Button from './Button.vue';
 import FeatherIcon from './FeatherIcon.vue';
 
@@ -75,9 +65,13 @@ export default defineComponent({
     },
   },
   setup() {
+    const languageDirection = ref(
+      getLanguageDirection(systemLanguageRef.value)
+    );
     return {
       primary: ref<InstanceType<typeof Button>[] | null>(null),
       secondary: ref<InstanceType<typeof Button>[] | null>(null),
+      languageDirection,
     };
   },
   data() {
@@ -144,6 +138,10 @@ export default defineComponent({
     },
   },
 });
+
+function getLanguageDirection(language: string): 'rtl' | 'ltr' {
+  return RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr';
+}
 </script>
 <style scoped>
 .v-enter-active,

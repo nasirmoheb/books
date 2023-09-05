@@ -69,7 +69,7 @@ export function getYMin(points: number[][]): number {
 }
 
 export function formatXLabels(label: string) {
-  return label;
+  return label.replace(/\b\d+\b/, '').trim();
 
   // return DateTime.fromISO(label).toFormat('MMMM yyyy');
 }
