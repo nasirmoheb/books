@@ -26,15 +26,26 @@
       <hr v-if="suggestions.length" />
 
       <!-- Search List -->
-      <div :style="`max-height: ${49 * 6 - 1}px`" class="overflow-auto">
-        <div v-for="(si, i) in suggestions" :key="`${i}-${si.label}`" :data-index="`search-suggestion-${i}`"
-          class="hover:bg-gray-50 cursor-pointer" :class="idx === i ? 'border-blue-500 bg-gray-50 border-s-4' : ''"
-          @click="select(i)">
+      <div
+        :style="`max-height: ${49 * 6 - 1}px`"
+        class="overflow-auto custom-scroll"
+      >
+        <div
+          v-for="(si, i) in suggestions"
+          :key="`${i}-${si.label}`"
+          :data-index="`search-suggestion-${i}`"
+          class="hover:bg-gray-50 cursor-pointer"
+          :class="idx === i ? 'border-gray-700 bg-gray-50 border-s-4' : ''"
+          @click="select(i)"
+        >
           <!-- Search List Item -->
           <div class="flex w-full justify-between px-3 items-center"
             :class="languageDirection === 'rtl' ? 'flex-row-reverse' : ''" style="height: var(--h-row-mid)">
             <div class="flex items-center">
-              <p :class="idx === i ? 'text-blue-600' : 'text-gray-900'" :style="idx === i ? 'margin-left: -4px' : ''">
+              <p
+                :class="idx === i ? 'text-gray-900' : 'text-gray-700'"
+                :style="idx === i ? 'margin-left: -4px' : ''"
+              >
                 {{ si.label }}
               </p>
               <p v-if="si.group === 'Docs'" class="text-gray-600 text-sm ms-3">

@@ -1,6 +1,10 @@
 "${0} ${1} already exists.","${0} ${1} zaten var.",
 "${0} ${1} does not exist",,
+<<<<<<< HEAD
 "${0} ${1} has been modified after loading","${0} ${1} yüklendikten sonra değiştirildi",
+=======
+"${0} ${1} has been modified after loading please reload entry.",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "${0} ${1} is linked with existing records.","${0} ${1} varolan kayıtlarla bağlantılıdır.",
 "${0} account not set in Inventory Settings.",,
 "${0} already saved",,
@@ -15,6 +19,10 @@
 "${0} entry imported",,
 "${0} fields selected",,
 "${0} filters applied","${0} uygulanan filtreler",
+<<<<<<< HEAD
+=======
+"${0} has linked child accounts.",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "${0} of type ${1} does not exist",,
 "${0} out of ${1}",,
 "${0} party ${1} is different from ${2}",,
@@ -98,10 +106,18 @@ April,,
 Arial,Arial,
 "Ascending Order","Artan Düzen",
 Asset,Varlık,
+<<<<<<< HEAD
+=======
+"Attach Image",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Attachment,,
 August,,
 "Auto Payments",,
 "Auto Stock Transfer",,
+<<<<<<< HEAD
+=======
+Autocomplete,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Back Reference",,
 "Bad import data, could not read file.",,
 Balance,Denge,
@@ -130,6 +146,10 @@ Cancel,"İptal etmek",
 Cancelled,"İptal edildi",
 "Cannot Commit Error",,
 "Cannot Delete",,
+<<<<<<< HEAD
+=======
+"Cannot Delete Account",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Cannot Export",,
 "Cannot Import",,
 "Cannot Open File",,
@@ -152,6 +172,10 @@ Cashflow,"Nakit Akışı",
 Chargeable,Ödetilebilir,
 "Chart Of Accounts Reviewed","İncelenen Hesap Planı",
 "Chart of Accounts","Hesap Planı",
+<<<<<<< HEAD
+=======
+Check,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Cheque,Çek,
 "City / Town",Şehir,
 Clear,Açık,
@@ -215,18 +239,35 @@ Currency,"Para birimi",
 Current,Şimdiki,
 "Current Assets","Dönen Varlıklar",
 "Current Liabilities","Cari Borçlar",
+<<<<<<< HEAD
+=======
+"Custom Field",,
+"Custom Fields",,
+"Custom Form",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Custom Hex","Özel Altıgen",
 Customer,Müşteri,
 "Customer Created","Müşteri Oluşturuldu",
 "Customer Currency","Müşteri Para Birimi",
 Customers,Müşteriler,
 Customizations,,
+<<<<<<< HEAD
 "Customize your invoices by adding a logo and address details","Logo ve adres bilgilerini ekleyerek faturalarınızı özelleştirin",
 Dashboard,"Gösterge paneli",
+=======
+"Customize Form",,
+"Customize your invoices by adding a logo and address details","Logo ve adres bilgilerini ekleyerek faturalarınızı özelleştirin",
+Dashboard,"Gösterge paneli",
+Data,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Database Error",,
 "Database file: ${0}","Veritabanı dosyası: ${0}",
 Date,Tarih,
 "Date Format","Tarih Biçimi",
+<<<<<<< HEAD
+=======
+"Date Time",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Day,Gün,
 Debit,Banka,
 "Debit Note","Borç Notu",
@@ -239,7 +280,13 @@ Default,,
 Defaults,,
 Delete,Silmek,
 "Delete ${0}?","${0} silinsin mi?",
+<<<<<<< HEAD
 "Delete Failed",,
+=======
+"Delete Account",,
+"Delete Failed",,
+"Delete Group",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Delivered,,
 Depreciation,Yıpranma,
 "Depreciation Entry","Amortisman Girişi",
@@ -276,6 +323,10 @@ Duplicate,Çiftleme,
 "Duplicate Template",,
 "Duplicate columns found: ${0}",,
 "Duties and Taxes","Görev ve Vergiler",
+<<<<<<< HEAD
+=======
+"Dynamic Link",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Earnest Money","pey akçesi",
 "Electronic Equipments","Elektronik Ekipmanlar",
 Email,E-posta,
@@ -285,9 +336,17 @@ Empty,Boş,
 "Enable Barcodes",,
 "Enable Batches",,
 "Enable Discount Accounting",,
+<<<<<<< HEAD
 "Enable Inventory",,
 "Enable Price List",,
 "Enable Serial Number",,
+=======
+"Enable Form Customization",,
+"Enable Inventory",,
+"Enable Price List",,
+"Enable Serial Number",,
+"Enable Stock Returns",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Enable UOM Conversion",,
 Enabled,,
 "Enabled For",,
@@ -326,8 +385,17 @@ Features,,
 February,,
 Field,Alan,
 Fieldname,Alanadı,
+<<<<<<< HEAD
 "File ${0} does not exist.",,
 "File selection failed",,
+=======
+"Fieldname ${0} already exists for ${1}",,
+"Fieldname ${0} already used for Custom Field ${1}",,
+Fieldtype,,
+"File ${0} does not exist.",,
+"File selection failed",,
+Fill,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Filter,Filtre,
 "Fiscal Year","Mali Yıl",
 "Fiscal Year End Date","Mali Yıl Bitiş Tarihi",
@@ -335,6 +403,7 @@ Filter,Filtre,
 "Fix Failed",,
 "Fixed Asset",Demirbaş,
 "Fixed Assets",Demirbaş,
+<<<<<<< HEAD
 "Following cells have errors: ${0}.",,
 "Following links do not exist: ${absentLinks .map((l) =>",,
 Font,Yazı,
@@ -342,6 +411,18 @@ For,İçin,
 "For Purchase",,
 "For Sales",,
 "Forbidden Error",,
+=======
+Float,,
+"Following cells have errors: ${0}.",,
+"Following links do not exist: ${absentLinks .map((l) =>",,
+Font,Yazı,
+"For Purchase",,
+"For Sales",,
+"Forbidden Error",,
+"Form Section",,
+"Form Tab",,
+"Form Type",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Fr,,
 Fraction,Kesir,
 "Fraction Units","Kesir Birimleri",
@@ -404,6 +485,10 @@ Inflow,Giriş,
 "Instance Id","Örnek Kimliği",
 "Insufficient Quantity",,
 "Insufficient Quantity.",,
+<<<<<<< HEAD
+=======
+Int,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Intergrated Tax","Entegre Vergi",
 "Internal Precision","İç Hassasiyet",
 "Invalid Key Error",,
@@ -429,6 +514,10 @@ Is,Oluyor,
 "Is Not",Değil,
 "Is Not Empty","Boş Değil",
 "Is Price List Enabled",,
+<<<<<<< HEAD
+=======
+"Is Required",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Is Whole",,
 Item,Öğe,
 "Item ${0} is a batched item",,
@@ -451,6 +540,10 @@ July,,
 June,,
 "Key Hints",,
 Kg,Kiloluk,
+<<<<<<< HEAD
+=======
+Label,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Language,Dil,
 "Left Index","Sol Dizin",
 "Legal Expenses","Yasal Giderler",
@@ -458,6 +551,10 @@ Language,Dil,
 "Less Than",daha,
 Liability,Yükümlülük,
 Limit,,
+<<<<<<< HEAD
+=======
+Link,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Link Validation Error",,
 "Linked Entries",,
 List,Liste,
@@ -558,6 +655,10 @@ Okay,,
 "Opening Balance Equity","Açılış Bakiyesi Özkaynakları",
 "Opening Balances","Açılış Bakiyeleri",
 "Opening Entry","Giriş Açılıyor",
+<<<<<<< HEAD
+=======
+Options,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Orange,Portakal,
 Organisation,Örgüt,
 Outflow,"Dışarı akma",
@@ -651,6 +752,10 @@ Purchase,"Satın alma",
 "Purchase Receipt Terms",,
 Purchases,Alımlar,
 Purple,Mor,
+<<<<<<< HEAD
+=======
+Purpose,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Qty. ${0}",,
 "Qty. in Transfer Unit",,
 Quantity,Miktar,
@@ -688,6 +793,12 @@ Report,Bildiri,
 Reports,Rapor,
 "Required fields not selected: ${0}",,
 "Retained Earnings","Elde Tutulan Kazançlar",
+<<<<<<< HEAD
+=======
+Return,,
+"Return Against",,
+"Return Issued",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Reverse Chrg.","Chrg'yi tersine çevir.",
 Reverted,Döndürüyordu,
 Reverts,Döndürüyor,
@@ -721,6 +832,10 @@ Sales,Satışlar,
 "Sales and Purchase",,
 Save,Kaydetmek,
 "Save ${0}?",,
+<<<<<<< HEAD
+=======
+"Save Customizations",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Save Template","Şablonu Kaydet",
 "Save Template File",,
 "Save as PDF","PDF olarak kaydet",
@@ -735,14 +850,25 @@ Select,Seçmek,
 "Select Color","Renk Seç",
 "Select Country","Ülke Seç",
 "Select File","Dosya Seç",
+<<<<<<< HEAD
 "Select Folder","Klasör Seç",
+=======
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Select Image","Resim Seç",
 "Select Template File",,
 "Select a Display Doc to view the Template",,
 "Select a Template type",,
+<<<<<<< HEAD
 "Select a pre-defined page size, or set a custom page size for your Print Template.",,
 "Select column",,
 "Select file","Dosya seç",
+=======
+"Select a form type to customize",,
+"Select a pre-defined page size, or set a custom page size for your Print Template.",,
+"Select column",,
+"Select file","Dosya seç",
+"Select folder","Klasör seç",
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Selected,,
 September,,
 "Serial Number",,
@@ -819,6 +945,11 @@ Stock,Stok,
 "Stock Movement Number Series",,
 "Stock Movement Print Template",,
 "Stock Movements",,
+<<<<<<< HEAD
+=======
+"Stock Not Received",,
+"Stock Not Shipped",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Stock Not Transferred",,
 "Stock Received But Not Billed","Stok Alındı Ancak Faturalandırılmadı",
 "Stock Received But Not Billed Acc.",,
@@ -839,6 +970,11 @@ Symbol,Sembol,
 System,Sistem,
 "System Settings","Sistem Ayarları",
 "System Setup","Sistem Kurulumu",
+<<<<<<< HEAD
+=======
+Table,,
+Target,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Tax,Vergi,
 "Tax Account","Vergi Hesabı",
 "Tax Amount",,
@@ -847,6 +983,11 @@ Tax,Vergi,
 "Tax ID","Vergi Kimliği",
 "Tax Rate",,
 "Tax Summary","Vergi Özeti",
+<<<<<<< HEAD
+=======
+"Tax Template",,
+"Tax Templates",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 "Tax and Totals",,
 "Taxable Value","Vergilendirilebilir Değer",
 "Taxed Amount",,
@@ -863,6 +1004,10 @@ Temporary,Geçici,
 "Temporary Accounts","Geçici Hesaplar",
 "Temporary Opening","Geçici Açılış",
 Terms,Şartlar,
+<<<<<<< HEAD
+=======
+Text,,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Th,,
 "The following characters cannot be used ${0} in a Number Series name.",,
 "The following items have insufficient quantity for Shipment: ${0}",,
@@ -903,7 +1048,11 @@ Total,Toplam,
 "Total Liability (Credit)","Toplam Sorumluluk (Kredi)",
 "Total Profit","Toplam Kar",
 "Total Spending","Toplam Harcama",
+<<<<<<< HEAD
 "Track Item",,
+=======
+"Track Inventory",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Transfer,Aktarma,
 "Transfer No",,
 "Transfer Type","Aktarım Türü",
@@ -950,6 +1099,10 @@ We,,
 "Write Off Account ${0} does not exist. Please set Write Off Account in General Settings",,
 "Write Off Account not set. Please set Write Off Account in General Settings","Hesab Askıya alınmadı. Lütfen Genel Ayarlar'da Hesap Kapatma ayarını yapın",
 "Write Off Entry","Kayıt Dışı Giriş",
+<<<<<<< HEAD
+=======
+"Year to Date",,
+>>>>>>> e86778f09eec7c44c144300bb424c840bd87ed4f
 Yearly,Yıllık,
 Years,Yıllar,
 Yellow,Sarı,
